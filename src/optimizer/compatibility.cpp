@@ -3,6 +3,12 @@
 #include <algorithm>
 
 namespace fragmentx {
+
+bool CompatibilityWeights::is_valid() const noexcept {
+  const double sum = w_size + w_lifetime + w_phase + w_thread + w_reuse;
+  return std::abs(sum - 1.0) < 1e-4;
+}
+
 namespace optimizer {
 
 CompatibilityScore CompatibilityEngine::score_pair(

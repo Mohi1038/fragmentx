@@ -4,7 +4,6 @@ add_library(fragmentx_optimizer STATIC
   candidate_generator.cpp
   policy_evaluator.cpp
   policy_search.cpp
-  policy_serializer.cpp
   workload_shift_detector.cpp
 )
 

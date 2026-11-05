@@ -5,7 +5,6 @@ add_executable(fragmentx_benchmarks
 target_link_libraries(fragmentx_benchmarks PRIVATE
   benchmark::benchmark
   fragmentx_optimizer
-  fragmentx_runtime
   fragmentx_compile_options
   Threads::Threads
 )

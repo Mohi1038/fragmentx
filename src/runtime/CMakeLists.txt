@@ -1,5 +1,6 @@
 add_library(fragmentx_runtime STATIC
   config.cpp
+  policy_serializer.cpp
   region_manager.cpp
   arena_manager.cpp
   size_classes.cpp

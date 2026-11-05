@@ -2,7 +2,6 @@
 /// @brief Hand-crafted, zero-dependency JSON serializer and parser for AllocationPolicy.
 
 #include <fragmentx/policy.hpp>
-#include <fragmentx/optimizer.hpp>
 #include <fstream>
 #include <sstream>
 #include <iostream>
@@ -12,13 +11,6 @@
 #include <limits>
 
 namespace fragmentx {
-
-// ─── CompatibilityWeights ───────────────────────────────────────────────────
-
-bool CompatibilityWeights::is_valid() const noexcept {
-  double sum = w_size + w_lifetime + w_phase + w_thread + w_reuse;
-  return std::abs(sum - 1.0) < 1e-4;
-}
 
 // ─── AllocationPolicy helpers ────────────────────────────────────────────────
 
