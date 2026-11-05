@@ -1,0 +1,3 @@
+add_executable(mixed_lifetime main.cpp)
+target_link_libraries(mixed_lifetime PRIVATE fragmentx_capture fragmentx_runtime fragmentx_compile_options)
+

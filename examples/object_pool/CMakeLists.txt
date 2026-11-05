@@ -1,0 +1,3 @@
+add_executable(object_pool main.cpp)
+target_link_libraries(object_pool PRIVATE fragmentx_runtime fragmentx_compile_options)
+

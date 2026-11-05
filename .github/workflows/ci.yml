@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    name: ${{ matrix.os }} / ${{ matrix.sanitizers }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        sanitizers: [none, asan-ubsan]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure
+        shell: bash
+        run: >-
+          cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
+          -DFRAGMENTX_BUILD_TESTS=ON
+          -DFRAGMENTX_BUILD_BENCHMARKS=ON
+          -DFRAGMENTX_BUILD_EXAMPLES=OFF
+          -DFRAGMENTX_ENABLE_ASAN=${{ matrix.sanitizers == 'asan-ubsan' && 'ON' || 'OFF' }}
+
+      - name: Build
+        run: cmake --build build --parallel 4
+
+      - name: Test
+        run: ctest --test-dir build --output-on-failure
+
+  thread-sanitizer:
+    name: ubuntu-latest / thread-sanitizer
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure
+        run: >-
+          cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
+          -DFRAGMENTX_BUILD_TESTS=ON
+          -DFRAGMENTX_BUILD_EXAMPLES=OFF
+          -DFRAGMENTX_ENABLE_TSAN=ON
+      - name: Build
+        run: cmake --build build --parallel 4
+      - name: Test
+        run: ctest --test-dir build --output-on-failure

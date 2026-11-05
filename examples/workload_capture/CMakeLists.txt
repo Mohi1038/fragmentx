@@ -1,0 +1,3 @@
+add_executable(workload_capture main.cpp)
+target_link_libraries(workload_capture PRIVATE fragmentx_capture fragmentx_runtime fragmentx_compile_options)
+

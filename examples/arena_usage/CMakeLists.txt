@@ -1,0 +1,3 @@
+add_executable(arena_usage main.cpp)
+target_link_libraries(arena_usage PRIVATE fragmentx_runtime fragmentx_compile_options)
+

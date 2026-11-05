@@ -1,0 +1,80 @@
+# ─── Build output ────────────────────────────────────────────────────────────
+build/
+build_*/
+install/
+out/
+cmake-build-*/
+.cmake/
+
+# ─── CMake generated ─────────────────────────────────────────────────────────
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+cmake_install.cmake
+Makefile
+CTestTestfile.cmake
+_deps/
+compile_commands.json
+
+# ─── FragmentX trace and policy files ────────────────────────────────────────
+*.fxtrace
+*.fxpolicy
+*.fxreport
+benchmarks/results/*/
+
+# ─── IDE and editor ──────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.orig
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+Desktop.ini
+
+# ─── Compiled objects ────────────────────────────────────────────────────────
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+*.out
+*.app
+
+# ─── Sanitizer output ────────────────────────────────────────────────────────
+*.asan
+*.tsan
+asan.log.*
+tsan.log.*
+
+# ─── Python ──────────────────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.pytest_cache/
+
+# ─── Node / Explorer frontend ────────────────────────────────────────────────
+explorer/node_modules/
+explorer/dist/
+explorer/.next/
+explorer/build/
+
+# ─── Documentation generated ─────────────────────────────────────────────────
+docs/doxygen/html/
+docs/doxygen/latex/
+docs/doxygen/xml/
+
+# ─── Misc ────────────────────────────────────────────────────────────────────
+*.log
+*.tmp
+.env
+

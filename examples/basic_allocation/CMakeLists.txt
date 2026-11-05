@@ -1,0 +1,3 @@
+add_executable(basic_allocation main.cpp)
+target_link_libraries(basic_allocation PRIVATE fragmentx_runtime fragmentx_compile_options)
+

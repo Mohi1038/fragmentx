@@ -1,0 +1,6 @@
+add_subdirectory(basic_allocation)
+add_subdirectory(object_pool)
+add_subdirectory(arena_usage)
+add_subdirectory(workload_capture)
+add_subdirectory(mixed_lifetime)
+
